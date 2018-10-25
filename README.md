@@ -14,9 +14,6 @@
 * `src/resources/application.properties`
   ```server.port=<Tomcat listening port>```
 
-## Spring Framework
-* CLASS @Bean: will be considered a singleton
-
 ## Spring Persistence (JPA)
 * Configuration file src/resources/application.properties
   ```
@@ -39,8 +36,6 @@
 ## Application
 * CLASS @SpringBootApplication
 * @SpringBootApplication = @Configuration + @EnableAutoConfiguration + @ComponentScan
-* CLASS @ComponentScan: asks Spring to search for other components (@Configuration)
-* CLASS @Configuration: marks the class as Bean definition
 * METHOD main:
   ```java
   public static void main(String[] args) { SpringApplication.run(MyClass.class, args); }
@@ -51,35 +46,12 @@
 * CLASS @RestController = @Controller + @ResponseBody
 * METHOD @GetMapping("/path"): indicates what URL will execute this method
 * METHOD @RequestMapping {@RestController}: indicates what URL will execute this method RESTful for a service
-* METHOD @ResponseBody: the returned value is directly used as the content of the web page ; otherwise the content is considered a link to a template HTML file
-* ARGUMENT @RequestParam(required=bool/defaultValue=<val>): links the URL parameters to the method parameters
-* ARGUMENT ATTRIBUTE @Value: indicates a default value
-
-## Dependency Injection
-* ATTRIBUTE @Autowired: asks SpringBoot to inject a dependency to another Spring element (Service, Controller...)
-* @Resource: injects an object that is already in the Application Context. It searches the instance by name.
-* @ModelAttribute: binds values from a View
 
 ## Repositories
 * CLASS @Repository (persistence layer)
 * @RepositoryRestResource:
 ** collectionResourceRel: rel value to use when generating links to this resource
 ** path where (URL) this resource is exported
-* @Transactional {CrudRepository} if any data operation within the class throws a RuntimeException => Rollback all associated database queries
-
-## Services
-* CLASS @Service (service layer)
-
-## Spring MVC (ThymeLeaf)
-* BEWARE that HTML tags MUST be closed
-* Thymeleaf namespace must be imported
-  ```html
-  <html xmlns:tl="http://www.thymeleaf.org">
-  ```
-* Natural Template
-  ```html
-  <h1 tl:text="${varname}">Example for Graphists</h1>
-  ```
   
 # External Resources
 
