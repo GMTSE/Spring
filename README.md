@@ -11,7 +11,7 @@
 * DELETE: removes a "document"
 
 ## Configuration File
-* `src/resources/application.properties`
+* `src/resources/application.properties`<br/>
   ```server.port=<Tomcat listening port>```
 
 ## Spring Persistence (JPA)
