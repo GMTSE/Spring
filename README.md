@@ -50,8 +50,8 @@
 ## Repositories
 * CLASS @Repository (persistence layer)
 * @RepositoryRestResource:
-** collectionResourceRel: rel value to use when generating links to this resource
-** path where (URL) this resource is exported
+  * collectionResourceRel: rel value to use when generating links to this resource
+  * path where (URL) this resource is exported
   
 # External Resources
 
