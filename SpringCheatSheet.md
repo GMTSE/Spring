@@ -11,7 +11,7 @@
 * DELETE: removes a "document"
 
 ## Configuration File
-* `src/resources/application.properties`
+* `src/resources/application.properties`<br/>
   ```server.port=<Tomcat listening port>```
 
 ## Spring Framework
@@ -52,7 +52,9 @@
 * METHOD @GetMapping("/path"): indicates what URL will execute this method
 * METHOD @RequestMapping {@RestController}: indicates what URL will execute this method RESTful for a service
 * METHOD @ResponseBody: the returned value is directly used as the content of the web page ; otherwise the content is considered a link to a template HTML file
-* ARGUMENT @RequestParam(required=bool/defaultValue=<val>): links the URL parameters to the method parameters
+* ARGUMENT @Param(...): links the URL parameters **in the URL format '?name=value'** to the method parameters
+* ARGUMENT @PathVariable(...): links the URL parameters **in the URL format '/path/name/'** to the method parameters
+* ARGUMENT @RequestParam(required=bool/defaultValue=<val>): links the URL parameters **found in the POST request's header?/body?** to the method parameters
 * ARGUMENT ATTRIBUTE @Value: indicates a default value
 
 ## Dependency Injection
@@ -80,7 +82,7 @@
   ```html
   <h1 tl:text="${varname}">Example for Graphists</h1>
   ```
-  
+	  
 # External Resources
 
 * http://files.zeroturnaround.com/pdf/zt_spring_annotations_cheat_sheet.pdf
